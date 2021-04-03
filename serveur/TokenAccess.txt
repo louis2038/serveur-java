@@ -1,0 +1,4 @@
+louis,88c9eb4a010b43263460daf8be9a9651,superadmin
+paul,81dc9bdb52d04dc20036dbd8313ed055,accessfile
+pierre,81dc9bdb52d04dc20036dbd8313ed055,none
+jak,81dc9bdb52d04dc20036dbd8313ed055,none

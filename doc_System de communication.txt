@@ -1,0 +1,48 @@
+dans cmd entrer: MEGAcmdShell
+
+DATA lien du televersement user -> DATA:
+https://mega.nz/megadrop/16Ew4wfBADc
+
+pour obtenir le lien d'1 fichier:
+export -a "hello.txt"
+
+mettre doc dans DATA:
+put "D:/ ......"
+
+transferer fichier de DATA a l'emplacement voulu:
+get "page1.pdf" "D:/FICHIER...."
+
+
+
+exemple : server&newclient&louis
+
+pas de token   		-> 0
+T = acess_token		-> 1
+I = accessfile		-> 2
+S = superadmin		-> 3
+
+server:
+
+	newclient	+ name + pass
+T	sendatclient:	+ int "qui ?" + message
+T	afficher    (afficher)
+T	listeclient   (donne la liste des clients)
+	connect (se connecter avec un token "user","pass")
+T	sendatallclient  "message"
+T-S	settokenaccess	"myuser" "mypass" , "user a set" "nouveau token" 
+T-I-S	explorefile  "String D:/FICHIER" 
+T-I	getdrop
+T-I	putfile	"myfile" "ou je veux le mettre"
+T-I 	getfile "nom du fichier (avec repertoire)" "nom racourcie"
+
+
+
+client:
+
+	newclientID + ID	(renvoie l'ID ! )
+	afficher					(afficher)
+	listeclientname	(recupère les donnés du server pour afficher la liste des client, quand (server&listeclient) )
+	connected  	+ ID( renvoie l'ID )
+	error   (newclientError)(connectedError)(notAccessToken)(argumentError)
+	accessFile
+	reportmega 
